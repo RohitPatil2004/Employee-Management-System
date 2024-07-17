@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <div className="navbar">
             <div className="navbar-left">
-                <img src="/logo.png" alt="Logo" className="logo" />
+                <img src="./logo.png" alt="Logo" className="logo" />
                 <span className="website-name">Easy Emp</span>
             </div>
             <div className="navbar-middle">
@@ -31,7 +31,7 @@ const NavBar = () => {
                 <button class="lgnbutton">
                     <span class="button_lg">
                         <span class="button_sl"></span>
-                        <span class="button_text">Download Now</span>
+                        <span class="button_text">Log In</span>
                     </span>
                 </button>
             </div>

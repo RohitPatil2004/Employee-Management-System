@@ -2,11 +2,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    /* background-image: linear-gradient(to top, #327373 0%, #330867 100%); */
+    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
     color: #fff;
     padding: 10px 20px;
     height: 60px;
     /* Adjust height as needed */
+    font-family: Monaco;
 }
 
 .navbar-left {
@@ -19,11 +21,12 @@
     /* Adjust logo size */
     height: auto;
     margin-right: 10px;
+    scale:initial
 }
 
 .website-name {
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .navbar-middle {

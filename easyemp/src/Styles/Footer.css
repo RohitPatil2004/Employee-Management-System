@@ -1,19 +1,23 @@
 .footer {
-    background-color: #DD6E42;
-    color: #fff;
+    /*background-image: linear-gradient( 91.2deg,  rgba(136,80,226,1) 4%, rgba(16,13,91,1) 96.5% );;*/
+    background-image: linear-gradient(to top, #327373 0%, #330867 100%);
+    color: #ffffff;
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    font-weight: bolder;
 }
 
 .footer-left {
     flex: 1;
+    font-family: Poppins;
 }
 
 .footer-website-name {
-    font-size: 1.2rem;
+    font-size: 30px;
     font-weight: bold;
+    font-family:Jumbo;
 }
 
 .footer-contact {
@@ -28,6 +32,7 @@
 
 .footer-address {
     text-align: right;
+    font-family: Jumbo;
 }
 
 .location-icon {
