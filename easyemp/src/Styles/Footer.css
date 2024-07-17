@@ -1,0 +1,35 @@
+.footer {
+    background-color: #DD6E42;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-website-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.footer-contact {
+    margin-top: 10px;
+}
+
+.footer-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer-address {
+    text-align: right;
+}
+
+.location-icon {
+    margin-right: 5px;
+}
