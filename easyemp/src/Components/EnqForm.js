@@ -1,5 +1,6 @@
-import React from 'react';
-import '../Styles/EnqForm.css';
+import React from "react";
+import "../Styles/EnqForm.css";
+
 
 const EnquiryForm = () => {
   return (
@@ -64,6 +65,6 @@ const EnquiryForm = () => {
       </div>
     </div>
   );
-}
+};
 
 export default EnquiryForm;

@@ -1,252 +1,266 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* background-image: linear-gradient(to top, #327373 0%, #330867 100%); */
-    background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
-    color: #fff;
-    padding: 10px 20px;
-    height: 60px;
-    /* Adjust height as needed */
-    font-family: Monaco;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* background-image: linear-gradient(to top, #327373 0%, #330867 100%); */
+  background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+  color: #fff;
+  padding: 10px 20px;
+  height: 60px;
+  /* Adjust height as needed */
+  font-family: Monaco;
 }
 
 .navbar-left {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    width: 40px;
-    /* Adjust logo size */
-    height: auto;
-    margin-right: 10px;
-    scale:initial
+  width: 40px;
+  /* Adjust logo size */
+  height: auto;
+  margin-right: 10px;
+  scale: initial;
 }
 
 .website-name {
-    font-size: 1.2rem;
-    font-weight: bolder;
+  font-size: 1.2rem;
+  font-weight: bolder;
+  margin-left: 0.5rem;
 }
 
 .navbar-middle {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
 
 .navbar-nav {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-item {
-    display: inline-block;
-    margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.active {
+  background-color: whitesmoke;
+  color: #0f1923;
+  border: 2px solid #7d8082;
+  font-size: 1.02rem;
+  width: max-content;
+  height: max-content;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 .nav-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-    color: #ccc;
+  color: #ccc;
 }
 
 .navbar-right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .button {
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
-    padding-block: 0.5rem;
-    padding-inline: 1.25rem;
-    background-color: rgb(0 107 179);
-    border-radius: 9999px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffff;
-    gap: 10px;
-    font-weight: bold;
-    border: 3px solid #ffffff4d;
-    outline: none;
-    overflow: hidden;
-    font-size: 15px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
 }
 
 .icon {
-    width: 24px;
-    height: 24px;
-    transition: all 0.3s ease-in-out;
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
 }
 
 .button:hover {
-    transform: scale(1.05);
-    border-color: #fff9;
+  transform: scale(1.05);
+  border-color: #fff9;
 }
 
 .button:hover .icon {
-    transform: translate(4px);
+  transform: translate(4px);
 }
 
 .button:hover::before {
-    animation: shine 1.5s ease-out infinite;
+  animation: shine 1.5s ease-out infinite;
 }
 
 .button::before {
-    content: "";
-    position: absolute;
-    width: 100px;
-    height: 100%;
-    background-image: linear-gradient(120deg,
-            rgba(255, 255, 255, 0) 30%,
-            rgba(255, 255, 255, 0.8),
-            rgba(255, 255, 255, 0) 70%);
-    top: 0;
-    left: -100px;
-    opacity: 0.6;
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
 }
 
 @keyframes shine {
-    0% {
-        left: -100px;
-    }
+  0% {
+    left: -100px;
+  }
 
-    60% {
-        left: 100%;
-    }
+  60% {
+    left: 100%;
+  }
 
-    to {
-        left: 100%;
-    }
+  to {
+    left: 100%;
+  }
 }
 
-
 .lgnbutton {
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
-    border: none;
-    background: none;
-    color: #0f1923;
-    cursor: pointer;
-    position: relative;
-    padding: 8px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
-    transition: all .15s ease;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all 0.15s ease;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
 }
 
 .lgnbutton::before,
 .lgnbutton::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    left: 0;
-    height: calc(50% - 5px);
-    border: 1px solid #7D8082;
-    transition: all .15s ease;
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7d8082;
+  transition: all 0.15s ease;
 }
 
 .lgnbutton::before {
-    top: 0;
-    border-bottom-width: 0;
+  top: 0;
+  border-bottom-width: 0;
 }
 
 .lgnbutton::after {
-    bottom: 0;
-    border-top-width: 0;
+  bottom: 0;
+  border-top-width: 0;
 }
 
 .lgnbutton:active,
 .lgnbutton:focus {
-    outline: none;
+  outline: none;
 }
 
 .lgnbutton:active::before,
 .lgnbutton:active::after {
-    right: 3px;
-    left: 3px;
+  right: 3px;
+  left: 3px;
 }
 
 .lgnbutton:active::before {
-    top: 3px;
+  top: 3px;
 }
 
 .lgnbutton:active::after {
-    bottom: 3px;
+  bottom: 3px;
 }
 
 .button_lg {
-    position: relative;
-    display: block;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #0f1923;
-    overflow: hidden;
-    box-shadow: inset 0px 0px 0px 1px transparent;
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
 }
 
 .button_lg::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 2px;
-    height: 2px;
-    background-color: #0f1923;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
 }
 
 .button_lg::after {
-    content: '';
-    display: block;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 4px;
-    height: 4px;
-    background-color: #0f1923;
-    transition: all .2s ease;
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all 0.2s ease;
 }
 
 .button_sl {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: -1px;
-    left: -8px;
-    width: 0;
-    background-color: #ff4655;
-    transform: skew(-15deg);
-    transition: all .2s ease;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all 0.2s ease;
 }
 
 .button_text {
-    position: relative;
+  position: relative;
 }
 
 .lgnbutton:hover {
-    color: #0f1923;
+  color: #0f1923;
 }
 
 .lgnbutton:hover .button_sl {
-    width: calc(100% + 15px);
+  width: calc(100% + 15px);
 }
 
 .lgnbutton:hover .button_lg::after {
-    background-color: #fff;
+  background-color: #fff;
 }

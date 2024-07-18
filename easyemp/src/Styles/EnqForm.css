@@ -12,21 +12,26 @@
 
 .enquiry-form-left {
     flex: 1;
+    display: grid;
+    align-self: center;
+    justify-self: center;
 }
 
 .enquiry-form-right {
     flex: 1;
-    padding-left: 40px;
+    padding-left: 20px;
 }
 
 .enquiry-title {
     font-size: 1.8rem;
     font-weight: bold;
+    text-align: center;
 }
 
 .enquiry-subtitle {
     font-size: 1.2rem;
     margin-top: 10px;
+    text-align: center;
 }
 
 .form {
