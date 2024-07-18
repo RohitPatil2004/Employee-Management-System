@@ -2,12 +2,15 @@ import "./App.css";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import EnquiryForm from "./Components/EnqForm";
-import BaseComponent from "bootstrap/js/dist/base-component";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.min.js";
 
 function App() {
   return (
     <>
+      {/*navbar*/}
       <NavBar activePage={"home"} />
+      {/*home*/}
       <div className="home-container">
         <div className="left-section">
           <button>Welcome to Easy Emp.</button>
@@ -30,6 +33,44 @@ function App() {
           <img src="./logo.png" alt="Employee Management System" />
         </div>
       </div>
+      {/*features*/}
+      <h1>Features of App</h1>
+      <div
+        id="carouselExampleControlsNoTouching"
+        class="carousel slide"
+        data-bs-touch="false"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="./logo.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./logo192.png" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="./logo512.png" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControlsNoTouching"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControlsNoTouching"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      {/*enquiry*/}
       <EnquiryForm />
       <Footer />
     </>
