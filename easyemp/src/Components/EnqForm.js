@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/EnqForm.css";
+import "./Styles/EnqForm.css";
 
 
 const EnquiryForm = () => {

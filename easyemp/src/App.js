@@ -2,11 +2,14 @@ import "./App.css";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import EnquiryForm from "./Components/EnqForm";
+import Carousel, {CarouselItem} from "./Components/Carousel";
 
 function App() {
   return (
     <>
+      {/*Nav Bar */}
       <NavBar activePage={"home"} />
+      {/*Home*/}
       <div className="home-container">
         <div className="left-section">
           <button>Welcome to Easy Emp.</button>
@@ -29,7 +32,24 @@ function App() {
           <img src="./logo.png" alt="Employee Management System" />
         </div>
       </div>
+      {/*features*/}
+      <section className="features">
+        <h1>Features</h1>
+        <Carousel>
+          <CarouselItem>
+            <img src="./logo.png" alt=""/>
+          </CarouselItem>
+          <CarouselItem>
+            <img src="./logo192.png" alt=""/>
+          </CarouselItem>
+          <CarouselItem>
+            <img src="./logo512.png" alt=""/>
+          </CarouselItem>
+        </Carousel>
+      </section>
+      {/*enquiry*/}
       <EnquiryForm />
+      {/*footer*/}
       <Footer />
     </>
   );
