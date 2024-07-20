@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Styles/NavBar.css';
+import './Styles/NavBar.css';
 
-const NavBar = () => {
+const NavBar = ({activePage}) => {
     return (
         <div className="navbar">
             <div className="navbar-left">
@@ -11,13 +11,13 @@ const NavBar = () => {
             <div className="navbar-middle">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a href="#home" className="nav-link">Home</a>
+                        <a href="#home" className={`${activePage === 'home' ? 'active' : 'nav-link'}`}>Home</a>
                     </li>
                     <li className="nav-item">
-                        <a href="#features" className="nav-link">Features</a>
+                        <a href="#features" className={`${activePage === 'features' ? 'active' : 'nav-link'}`}>Features</a>
                     </li>
                     <li className="nav-item">
-                        <a href="#pricing" className="nav-link">Pricing</a>
+                        <a href="#pricing" className={`${activePage === 'pricing' ? 'active' : 'nav-link'}`}>Pricing</a>
                     </li>
                 </ul>
             </div>
