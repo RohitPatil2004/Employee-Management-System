@@ -1,5 +1,6 @@
 import React from 'react';
 import './Styles/NavBar.css';
+import Feature from '../Pages/Features'
 
 const NavBar = ({activePage}) => {
     return (
@@ -14,7 +15,7 @@ const NavBar = ({activePage}) => {
                         <a href="#" className={`${activePage === 'home' ? 'active' : 'nav-link'}`}>Home</a>
                     </li>
                     <li className="nav-item">
-                        <a href="#features" className={`${activePage === 'features' ? 'active' : 'nav-link'}`}>Features</a>
+                        <a href="#Feature" className={`${activePage === 'features' ? 'active' : 'nav-link'}`}>Features</a>
                     </li>
                     <li className="nav-item">
                         <a href="#pricing" className={`${activePage === 'pricing' ? 'active' : 'nav-link'}`}>Pricing</a>
