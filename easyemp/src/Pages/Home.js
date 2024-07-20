@@ -1,10 +1,10 @@
-import "./App.css";
-import NavBar from "./Components/NavBar";
-import Footer from "./Components/Footer";
-import EnquiryForm from "./Components/EnqForm";
-import Carousel, {CarouselItem} from "./Components/Carousel";
+import "../Styles/Home.css";
+import NavBar from "../Components/NavBar";
+import Footer from "../Components/Footer";
+import EnquiryForm from "../Components/EnqForm";
+import Carousel, {CarouselItem} from "../Components/Carousel";
 
-function App() {
+function Home() {
   return (
     <>
       {/*Nav Bar */}
@@ -55,4 +55,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

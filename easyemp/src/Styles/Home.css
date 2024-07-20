@@ -118,7 +118,7 @@
   margin-bottom: 2rem;
 }
 
-.features .carousel {
-  width: 100%;
-  max-width: 100%;
+.features img {
+  background-size: cover;
+  height: 100%; 
 }
