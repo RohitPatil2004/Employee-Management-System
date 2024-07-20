@@ -11,7 +11,7 @@ const NavBar = ({activePage}) => {
             <div className="navbar-middle">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <a href="#home" className={`${activePage === 'home' ? 'active' : 'nav-link'}`}>Home</a>
+                        <a href="#" className={`${activePage === 'home' ? 'active' : 'nav-link'}`}>Home</a>
                     </li>
                     <li className="nav-item">
                         <a href="#features" className={`${activePage === 'features' ? 'active' : 'nav-link'}`}>Features</a>
