@@ -1,125 +1,97 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Styles/LogInPage.css";
-import googleLogo from "./logo.png";
-import NavBar from "../Components/NavBar";
-import Footer from "../Components/Footer";
+import googleLogo from "../Assets/google.svg";
 
-const LoginAndSignup = () => {
+const LoginPage = () => {
+  const [isLogin, setIsLogin] = useState(true);
+
+  const toggleForm = () => {
+    setIsLogin(!isLogin);
+  };
+
   return (
-    <>
-      <NavBar />
-      <div className="login-wrap">
-        <div className="login-html">
-          <input
-            id="tab-1"
-            type="radio"
-            name="tab"
-            className="sign-in"
-            defaultChecked
-          />
-          <label htmlFor="tab-1" className="tab">
-            Sign In
-          </label>
-          <input id="tab-2" type="radio" name="tab" className="sign-up" />
-          <label htmlFor="tab-2" className="tab">
-            Sign Up
-          </label>
-          <div className="login-form">
-            <div className="sign-in-htm">
-              <div className="group">
-                <label htmlFor="user" className="label">
-                  Username
-                </label>
-                <input id="user" type="text" className="input" />
-              </div>
-              <div className="group">
-                <label htmlFor="pass" className="label">
-                  Password
-                </label>
-                <input
-                  id="pass"
-                  type="password"
-                  className="input"
-                  data-type="password"
-                />
-              </div>
-              <div className="group">
-                <input type="submit" className="button" value="Sign In" />
-              </div>
-              <div className="hr"></div>
-              <div className="foot-lnk">
-                <a href="#forgot">Forgot Password?</a>
-              </div>
-              <div className="foot-lnk">
-                <a href="#google-login">
-                  <img
-                    src={googleLogo}
-                    alt="Google Logo"
-                    className="google-logo"
-                  />
-                  Login with Google
-                </a>
-              </div>
-            </div>
-            <div className="sign-up-htm">
-              <div className="group">
-                <label htmlFor="user" className="label">
-                  Username
-                </label>
-                <input id="user" type="text" className="input" />
-              </div>
-              <div className="group">
-                <label htmlFor="pass" className="label">
-                  Password
-                </label>
-                <input
-                  id="pass"
-                  type="password"
-                  className="input"
-                  data-type="password"
-                />
-              </div>
-              <div className="group">
-                <label htmlFor="pass" className="label">
-                  Repeat Password
-                </label>
-                <input
-                  id="pass"
-                  type="password"
-                  className="input"
-                  data-type="password"
-                />
-              </div>
-              <div className="group">
-                <label htmlFor="pass" className="label">
-                  Email Address
-                </label>
-                <input id="pass" type="text" className="input" />
-              </div>
-              <div className="group">
-                <input type="submit" className="button" value="Sign Up" />
-              </div>
-              <div className="hr"></div>
-              <div className="foot-lnk">
-                <label htmlFor="tab-1">Already Member?</label>
-              </div>
-              <div className="foot-lnk">
-                <a href="#google-login">
-                  <img
-                    src={googleLogo}
-                    alt="Google Logo"
-                    className="google-logo"
-                  />
-                  Login with Google
-                </a>
-              </div>
-            </div>
+    <div className="login-signup-form">
+      <div className="form-container">
+        <div
+          className={`form-wrap ${isLogin ? "login-active" : "signup-active"}`}
+        >
+          <div className="form-header">
+            <h2>{isLogin ? "Log In" : "Sign Up"}</h2>
+            <button className="toggle-btn" onClick={toggleForm}>
+              {isLogin ? "Sign Up" : "Log In"}
+            </button>
           </div>
+          {isLogin ? <LoginForm /> : <SignupForm />}
         </div>
       </div>
-      <Footer />
-    </>
+    </div>
   );
 };
 
-export default LoginAndSignup;
+const LoginForm = () => {
+  return (
+    <form className="login-form">
+      <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div className="form-group">
+        <button type="submit" className="submit-btn">
+          Log In
+        </button>
+      </div>
+      <div className="form-group">
+        <a href="#forgot" className="forgot-password">
+          Forgot Password?
+        </a>
+      </div>
+      <div className="form-group">
+        <button className="google-btn">
+          <img src={googleLogo} alt="Google Logo" className="google-logo" />
+          Continue with Google
+        </button>
+      </div>
+    </form>
+  );
+};
+
+const SignupForm = () => {
+  return (
+    <form className="signup-form">
+      <div className="form-group">
+        <label htmlFor="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <div className="form-group">
+        <label htmlFor="confirmPassword">Confirm Password</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+        />
+      </div>
+      <div className="form-group">
+        <button type="submit" className="submit-btn">
+          Sign Up
+        </button>
+      </div>
+      <div className="form-group">
+        <button className="google-btn">
+          <img src={googleLogo} alt="Google Logo" className="google-logo" />
+          Continue with Google
+        </button>
+      </div>
+    </form>
+  );
+};
+
+export default LoginPage;
