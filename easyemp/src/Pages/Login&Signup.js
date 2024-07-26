@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import "../Styles/LogInPage.css";
+import "../Styles/Login&Signup.css";
 import googleLogo from "../Assets/google.svg";
 
 const LoginPage = () => {
