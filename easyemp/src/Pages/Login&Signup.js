@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import "../Styles/Login&Signup.css";
@@ -31,6 +31,10 @@ const LoginPage = () => {
 };
 
 const LoginForm = () => {
+    useEffect(() => {
+      document.title='Login'
+    }, []);
+
   const [passwordVisible, setPasswordVisible] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -85,6 +89,10 @@ const LoginForm = () => {
 };
 
 const SignupForm = () => {
+    useEffect(() => {
+      document.title='Signup'
+    }, []);
+
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
@@ -152,7 +160,7 @@ const SignupForm = () => {
         </div>
       </div>
       <div className="form-group">
-        <button type="submit" className="submit-btn">
+        <button type="submit" className="submit-btn" >
           Sign Up
         </button>
       </div>

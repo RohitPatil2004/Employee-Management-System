@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 require('dotenv').config();
 
 // Create an Express app
@@ -27,7 +27,6 @@ app.use(express.json());
 app.get('/api/test', (req, res) => {
   res.send('API is working!');
 });
-
 
 // // Define a route to register a new user
 // app.post('/api/register', async (req, res) => {

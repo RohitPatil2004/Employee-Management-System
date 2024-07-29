@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../Styles/Home.css";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
@@ -5,6 +6,9 @@ import EnquiryForm from "../Components/EnqForm";
 import Carousel, {CarouselItem} from "../Components/Carousel";
 
 function Home() {
+    useEffect(() => {
+      document.title='Home'
+    }, []);
   return (
     <>
       {/*Nav Bar */}

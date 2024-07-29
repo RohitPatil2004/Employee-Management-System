@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import PricingPlan from '../Components/PricingPlan';
 import '../Styles/Pricing.css'
 
 const Pricing = () => {
+    useEffect(() => {
+      document.title='Pricing'
+    }, []);
+
   const pricingPlans = [
     {
       image: '/path/to/image1.jpg',

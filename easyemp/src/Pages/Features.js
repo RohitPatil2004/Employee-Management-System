@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavBar from "../Components/NavBar";
 import Footer from "../Components/Footer";
 import "../Styles/Features.css";
 
 const Features = () => {
+    useEffect(() => {
+      document.title='Features'
+    }, []);
   return (
     <>
       <NavBar activePage={"features"} />
