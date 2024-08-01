@@ -5,6 +5,7 @@ import googleLogo from "../Assets/google.svg";
 import { Link, Navigate } from "react-router-dom";
 import "../Styles/Login.css";
 import axios from 'axios'; // Import axios for HTTP requests
+import Cookies from 'js-cookie';
 
 const LoginForm = () => {
   useEffect(() => {
@@ -40,13 +41,17 @@ const LoginForm = () => {
       setError("Both fields are required");
       return;
     }
-
+    
     try {
       // Send POST request to the backend
       const response = await axios.post('http://localhost:8002/login', {
         email,
         password,
-      });
+      }, { withCredentials: true});
+      
+      const sessionCookie = Cookies.get('session');
+      console.log('Session Cookie:', sessionCookie);
+
       setSuccess(response.data); // Handle successful login
       setError('');
       setRedirect(true); // Trigger redirect on successful login

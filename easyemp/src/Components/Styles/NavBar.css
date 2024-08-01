@@ -270,3 +270,9 @@
 .lgnbutton:hover .button_lg::after {
   background-color: #fff;
 }
+
+.profile-icon {
+  font-size: 24px;
+  color: #007bff;
+  margin-left: 15px;
+}

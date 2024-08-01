@@ -2,9 +2,9 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 const { signup } = require('./Controller/signupController');
 const {login} = require('./Controller/loginController');
+const { removeSession } = require('./Controller/sessionStore');
 require('dotenv').config();
 
 // Create an Express app
@@ -19,8 +19,13 @@ mongoose.connect(process.env.MONGODB_URI, {
 // Define a port for the server to listen on
 const port = process.env.PORT;
 
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true,
+};
+
 // Enable CORS
-app.use(cors());
+app.use(cors(corsOptions));
 
 // Parse JSON bodies
 app.use(express.json());
@@ -65,6 +70,16 @@ app.get('/api/test', (req, res) => {
 
 app.post('/signup', signup);
 app.post('/login', login);
+app.post('/logout', (req, res) => {
+  const token = req.cookies.session;
+  if (token) {
+    removeSession(token);
+    res.clearCookie('session');
+    res.send('Logged out successfully!');
+  } else {
+    res.status(400).send('No Session Found');
+  }
+});
 
 // Start the server
 app.listen(port, () => {
