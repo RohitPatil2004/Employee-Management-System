@@ -3,6 +3,8 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const { signup } = require('./Controller/signupController');
+const {login} = require('./Controller/loginController');
 require('dotenv').config();
 
 // Create an Express app
@@ -60,6 +62,9 @@ app.get('/api/test', (req, res) => {
 //     res.status(400).send(error.message);
 //   }
 // });
+
+app.post('/signup', signup);
+app.post('/login', login);
 
 // Start the server
 app.listen(port, () => {
