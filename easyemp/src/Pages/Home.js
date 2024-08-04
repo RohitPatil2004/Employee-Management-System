@@ -5,7 +5,7 @@ import Footer from "../Components/Footer";
 import EnquiryForm from "../Components/EnqForm";
 import Carousel, {CarouselItem} from "../Components/Carousel";
 
-function Home() {
+const Home = () => {
     useEffect(() => {
       document.title='Home'
     }, []);
