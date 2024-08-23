@@ -3,83 +3,42 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const { signup } = require('./Controller/signupController');
-const {login} = require('./Controller/loginController');
-const { removeSession } = require('./Controller/sessionStore');
+const { login } = require('./Controller/loginController');
+const { removeSession } = require('./Controller/sessionStore'); // Ensure usage or remove
 require('dotenv').config();
 
-// Create an Express app
 const app = express();
 
-// Connect to MongoDB using Mongoose
+// Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+}).then(() => {
+  console.log('MongoDB connected successfully');
+}).catch(err => {
+  console.error('MongoDB connection error:', err);
 });
 
-// Define a port for the server to listen on
-const port = process.env.PORT;
+// Server port
+const port = process.env.PORT || 8002;
 
+// CORS configuration
 const corsOptions = {
   origin: 'http://localhost:3000',
   credentials: true,
 };
-
-// Enable CORS
 app.use(cors(corsOptions));
 
-// Parse JSON bodies
-app.use(express.json());
+// Middleware
+app.use(express.json()); // Parse JSON bodies
 
-// Define routes
+// Routes
 app.get('/api/test', (req, res) => {
   res.send('API is working!');
 });
-
-// // Define a route to register a new user
-// app.post('/api/register', async (req, res) => {
-//   try {
-//     const hashedPassword = await bcrypt.hash(req.body.password, 10);
-//     const user = new User({
-//       username: req.body.username,
-//       email: req.body.email,
-//       password: hashedPassword,
-//     });
-//     await user.save();
-//     res.send('User created successfully!');
-//   } catch (error) {
-//     res.status(400).send(error.message);
-//   }
-// });
-
-// // Define a route to login an existing user
-// app.post('/api/login', async (req, res) => {
-//   try {
-//     const user = await User.findOne({ email: req.body.email });
-//     if (!user) {
-//       return res.status(401).send('Invalid email or password');
-//     }
-//     const isValidPassword = await bcrypt.compare(req.body.password, user.password);
-//     if (!isValidPassword) {
-//       return res.status(401).send('Invalid email or password');
-//     }
-//     res.send('Login successful!');
-//   } catch (error) {
-//     res.status(400).send(error.message);
-//   }
-// });
-
 app.post('/signup', signup);
 app.post('/login', login);
-app.post('/logout', (req, res) => {
-  const token = req.cookies.session;
-  if (token) {
-    removeSession(token);
-    res.clearCookie('session');
-    res.send('Logged out successfully!');
-  } else {
-    res.status(400).send('No Session Found');
-  }
-});
+
 
 // Start the server
 app.listen(port, () => {

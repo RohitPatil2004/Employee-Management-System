@@ -1,6 +1,6 @@
 // controllers/signupController.js
 const bcrypt = require('bcryptjs');
-const User = require('../models/User');
+const User = require('../Models/User');
 
 exports.signup = async (req, res) => {
   try {
@@ -8,7 +8,10 @@ exports.signup = async (req, res) => {
 
     // Generate random string (if needed, for other purposes)
     // const randomString = generateRandomString(10); // Example usage
-
+    const employeePosition = "emp";
+    const name = "none";
+    const address = "none";
+    const phone_no = 0;
     // Hash the password
     const hashedPassword = await bcrypt.hash(password, 3);
 
@@ -16,6 +19,11 @@ exports.signup = async (req, res) => {
     const user = new User({
       email,
       password: hashedPassword,
+      name: name,
+      position: employeePosition,
+      is_admin: false,
+      address: address,
+      phone_no: phone_no,
     });
     await user.save();
 

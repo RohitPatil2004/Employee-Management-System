@@ -68,7 +68,7 @@ const NavBar = ({ activePage }) => {
       <div className="navbar-right">
         {isLoggedIn ? (
           <div className="profile-menu">
-          <Link to="/dashboard" className="button" onClick={handleTryFreeClick}>
+          <Link to="/" className="button" onClick={handleTryFreeClick}>
             Try
             <svg fill="currentColor" viewBox="0 0 24 24" className="icon">
               <path

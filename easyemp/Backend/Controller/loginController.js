@@ -5,6 +5,8 @@ const crypto = require('crypto');
 const {storeSession, getSession} = require('./sessionStore');
 const { faLocust } = require('@fortawesome/free-solid-svg-icons');
 
+
+// login the user to the system.
 exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -37,6 +39,7 @@ exports.login = async (req, res) => {
   }
 };
 
+// keeping the session cookie alive until the website is close.
 exports.keepAlive = async(req, res) => {
   try {
     const {sessionToken} = req.cookie;
